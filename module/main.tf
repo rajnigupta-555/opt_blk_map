@@ -8,4 +8,11 @@ module "sta" {
   source           = "../env/dev/storage_account"
   storage_account = var.storage_account
    depends_on = [module.rg]
+
+}
+
+resource "null_resource" "trigger_echo" {
+  provisioner "local-exec" {
+    command = "echo 'Triggering CI/CD pipeline with a dummy change'"
+  }
 }

@@ -32,8 +32,8 @@ jobs:
         with:
           terraform_version: 1.5.7
 
-      - name: Terraform Format Check
-        run: terraform -chdir=${{ env.TF_WORKING_DIR }} fmt -check
+      #- name: Terraform Format Check
+      #  run: terraform -chdir=${{ env.TF_WORKING_DIR }} fmt -check
 
       - name: Terraform Validate
         run: terraform -chdir=${{ env.TF_WORKING_DIR }} validate

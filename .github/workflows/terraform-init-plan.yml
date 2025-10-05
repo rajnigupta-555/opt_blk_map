@@ -34,12 +34,11 @@ jobs:
 
       #- name: Terraform Format Check
       #  run: terraform -chdir=${{ env.TF_WORKING_DIR }} fmt -check
-
+      - name: Terraform Init
+        run: terraform -chdir=${{ env.TF_WORKING_DIR }} init 
+        
       - name: Terraform Validate
         run: terraform -chdir=${{ env.TF_WORKING_DIR }} validate
-
-      - name: Terraform Init
-        run: terraform -chdir=${{ env.TF_WORKING_DIR }} init
 
       - name: Terraform Plan
         run: terraform -chdir=${{ env.TF_WORKING_DIR }} plan
